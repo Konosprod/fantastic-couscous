@@ -31,7 +31,7 @@ with open(cuefile, "rb") as f:
 
 cuesheet.parse()
 
-ffprobeCmd = "ffprobe -print_format json -show_format -sexagesimal aonatsu-ost-a.flac"
+ffprobeCmd = "ffprobe -print_format json -show_format -sexagesimal " + cuefile.file
 
 process = Popen(shlex.split(ffprobeCmd), stdout=PIPE, stderr=PIPE)
 out = process.communicate()
